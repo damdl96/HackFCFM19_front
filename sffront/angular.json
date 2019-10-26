@@ -24,6 +24,7 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -118,6 +119,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "sffront"
 }
