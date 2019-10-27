@@ -22,6 +22,19 @@
           "/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
+      } 
+    }
+  ], "dataGroups": [
+    {
+      "name": "sffront-api",
+      "urls": [
+        "http://192.168.1.102:3001/"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxAge": "1h",
+        "maxSize": 100,
+        "timeout": "10s"
       }
     }
   ]
