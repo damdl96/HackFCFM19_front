@@ -34,19 +34,18 @@ export class AppComponent implements OnInit {
         },
       },
       data: {
-        labels: ['Jamón', 'Huevo', 'Carne'],
         datasets: [{
             label: 'Mediciones',
-            data: [2430, 15600, 365],
-            backgroundColor: ["pink", "blue", "red"],
-            borderColor: 'black',
+            data: 2300,
+            backgroundColor: 'black',
+            borderColor: 'blue',
             fill: false,
           }],
       }
     });
 
     this.chartHumidity = new Chart('humidity', {
-      type: 'bar',
+      type: 'line',
       options: {
         responsive: true,
         title: {
@@ -55,29 +54,33 @@ export class AppComponent implements OnInit {
         },
       },
       data: {
-        labels: ['Jamón', 'Huevo', 'Carne'],
         datasets: [{
             label: 'Mediciones',
-            data: [2430, 15600, 365],
-            backgroundColor: ["pink", "blue", "red"],
-            borderColor: 'blue',
+            data: 2300,
+            backgroundColor: 'blue',
+            borderColor: 'black',
             fill: false,
           }],
       }
     });
 
     this.webSocketService.listen('mqtt:temp').subscribe((data) => {
-      console.log('Temperaturas: ' + JSON.stringify(data));
-      this.updateChartData(this.chartTemperature, data, 0);
+      console.log("temperatura: ", data['value']);
+      this.updateTemperatureChartData(this.chartTemperature, data['value'], 0);
     })
 
     this.webSocketService.listen('mqtt:hum').subscribe((data) => {
-      console.log('Humedad: ' + JSON.stringify(data));
-      this.updateChartData(this.chartHumidity, data, 0);
+      console.log("humedad: ", data['value']);
+      this.updateHumidityChartData(this.chartHumidity, data['value'], 0);
     })
   }
 
-  updateChartData(chart, data, dataSetIndex) {
+  updateTemperatureChartData(chart, data, dataSetIndex) {
+    chart.data.datasets[dataSetIndex].data = data;
+    chart.update();
+  }
+
+  updateHumidityChartData(chart, data, dataSetIndex) {
     chart.data.datasets[dataSetIndex].data = data;
     chart.update();
   }
