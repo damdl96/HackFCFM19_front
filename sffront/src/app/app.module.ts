@@ -12,12 +12,14 @@ import { MatListModule } from '@angular/material/list';
 import { HeaderComponent } from './header/header.component';
 
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DropdownComponent
+    DropdownComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
