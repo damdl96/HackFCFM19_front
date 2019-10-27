@@ -12,13 +12,15 @@ import { MatListModule } from '@angular/material/list';
 import { HeaderComponent } from './header/header.component';
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 const config: SocketIoConfig = { url: 'http://192.168.1.102:3001/', options: {} }
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,
