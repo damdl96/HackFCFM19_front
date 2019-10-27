@@ -9,7 +9,8 @@ export class WebsocketService {
 
   socket: any;
 
-  readonly uri: string = "http://192.168.1.114:3001/";
+  readonly uri: string = "http://192.168.1.102:3001/";
+  //readonly uri: string = "http://192.168.1.142:3000/";
 
   constructor() { 
     this.socket = io(this.uri);
