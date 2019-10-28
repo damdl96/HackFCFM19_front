@@ -1,7 +1,7 @@
 # HackFCFM19_front
 ## Mr Freeze
 
-Progressive Web App frontend hecha para mostrar los datos de nuestros sensores de temperatura y humedad de nuestra aplicación de back end, mostrando al usuario datos analiticos acerca del estado del refrigerador que se esta monitoriando gracias a nuestro sistema embebido.
+Progressive Web App hecha para mostrar los datos de nuestros sensores de temperatura y humedad de nuestra aplicación de backend, mostrando al usuario datos analiticos acerca del estado del refrigerador que se esta monitoriando gracias a nuestro sistema embebido.
 
 ## Tecnologias
 
